@@ -9,6 +9,20 @@ To install Python dependencies run
 $ pip3 install -r requirements.txt
 ```
 
+## Setting up the environment
+
+To set up the environment before running commands like `python3 factory-reset.py`, follow these steps:
+
+* Ensure you have Python 3 installed on your system.
+* Create a virtual environment using `python3 -m venv <env_name>`.
+* Activate the virtual environment:
+  * On Windows: `<env_name>\Scripts\activate`
+  * On Unix or MacOS: `source <env_name>/bin/activate`
+* Install the required dependencies by running `pip install -e .` in the root directory of the repository. This will read the `setup.py` file and install the required packages.
+* Verify that the dependencies are installed correctly by running `pip list`.
+
+This will ensure that the dependencies are isolated within the virtual environment and do not interfere with the system-wide packages.
+
 ## Initialization
 
 ### Automatic factory reset, pairing and firmware flashing
