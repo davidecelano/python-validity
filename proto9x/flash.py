@@ -1,4 +1,3 @@
-
 from .tls import tls
 from struct import pack, unpack
 from binascii import hexlify, unhexlify
@@ -126,4 +125,3 @@ def read_flash_all(partition, start, end):
 def write_fw_signature(partition, signature):
     rsp=tls.cmd(pack('<BBxH', 0x42, partition, len(signature)) + signature)
     assert_status(rsp)
-

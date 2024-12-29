@@ -245,7 +245,7 @@ class Tls():
         return self.with_neg_hdr(0x0f, b)
 
     def handle_server_hello(self, p):
-        if p[:2] != unhexlify('0303'):
+        if p[:2] not in [unhexlify('0303'), unhexlify('0400')]:
             raise Exception('unexpected TLS version %s' % hexlify(p[:2]).decode())
 
         p = p[2:]
@@ -332,7 +332,7 @@ class Tls():
             t, mj, mn, sz = unpack('>BBBH', hdr)
             pkt, rsp = rsp[:sz], rsp[sz:]
 
-            if mj != 3 or mn != 3:
+            if mj != 3 or mn not in [3, 0]:
                 raise Exception('Unexpected TLS version %d %d' % (mj, mn))
 
             if t == 0x16:
@@ -367,7 +367,7 @@ class Tls():
         return unhexlify('160303') + with_2bytes_size(b)
 
     def make_client_hello(self):
-        h = unhexlify('0303') # TLS 1.2
+        h = unhexlify('0400') # TLS 4.0
         #self.client_random = unhexlify('bc349559ac16c8f8362191395b4d04a435d870315f519eed8777488bc2b9600c')
         self.client_random = get_random_bytes(0x20)
         h += self.client_random # client's random
