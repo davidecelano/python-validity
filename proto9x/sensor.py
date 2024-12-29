@@ -1,4 +1,3 @@
-
 from .tls import tls
 from .usb import usb
 from .db import db, subtype_to_string
@@ -295,4 +294,3 @@ def identify_sensor():
         raise Exception('This was not expected')
 
     return dev_info_lookup(major, minor)
-
