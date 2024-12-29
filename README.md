@@ -2,14 +2,9 @@
 Validity fingerprint sensor library.
 Originally designed to capture some of my findings for 138a:0097, but if you manage to get it working for some other Validity sensor - pull requests are welcome.
 
-## Setting up
 
-To install Python dependencies run
-```
-$ pip3 install -r requirements.txt
-```
 
-## Setting up the environment
+## Setting up the build environment
 
 To set up the environment before running commands like `python3 factory-reset.py`, follow these steps:
 
@@ -20,6 +15,9 @@ To set up the environment before running commands like `python3 factory-reset.py
   * On Unix or MacOS: `source <env_name>/bin/activate`
 * Install the required dependencies by running `pip install -e .` in the root directory of the repository. This will read the `setup.py` file and install the required packages.
 * Verify that the dependencies are installed correctly by running `pip list`.
+* Install `gcc` as a prerequisite before running `pip install -e .`:
+  * On Debian-based systems: `sudo apt-get install gcc`
+  * On Red Hat-based systems: `sudo yum install gcc`
 
 This will ensure that the dependencies are isolated within the virtual environment and do not interfere with the system-wide packages.
 
@@ -105,6 +103,14 @@ The only reason you need to do this is to find `6_07f_lenovo_mis.xpfwext` (for v
 
       innoextract n1mgf03w.exe -e -I 6_07f_lenovo_mis.xpfwext # vfs0097
       innoextract n1cgn08w.exe -e -I 6_07f_Lenovo.xpfwext # vfs0090
+
+
+## Setting up the script execution environment
+
+To install Python dependencies run
+```
+$ pip3 install -r requirements.txt
+```
 
 ### Factory reset
 If your device was previously paired with another OS or computer, you need to do a factory reset.
