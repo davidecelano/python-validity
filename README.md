@@ -107,7 +107,14 @@ The only reason you need to do this is to find `6_07f_lenovo_mis.xpfwext` (for v
 
 ## Setting up the script execution environment
 
-To install Python dependencies run
+Install packages
+```
+gcc
+python-devel
+gmp-devel
+```
+
+Install Python dependencies
 ```
 $ pip3 install -r requirements.txt
 ```
