@@ -112,6 +112,7 @@ Install packages
 gcc
 python-devel
 gmp-devel
+innoextract
 ```
 
 Install Python dependencies
