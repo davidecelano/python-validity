@@ -56,8 +56,8 @@ DEFAULT_URIS = {
         'referral': 'https://support.lenovo.com/us/en/downloads/DS120491',
     },
     VFS.DEV_97: {
-        'driver': 'https://download.lenovo.com/pccbbs/mobiles/n1mgf03w.exe',
-        'referral': 'https://download.lenovo.com/pccbbs/mobiles/n1mgf03w.exe'
+        'driver': 'https://download.lenovo.com/pccbbs/mobiles/n1mgf18w.exe',
+        'referral': 'https://download.lenovo.com/pccbbs/mobiles/n1mgf18w.exe'
     }
 }
 
