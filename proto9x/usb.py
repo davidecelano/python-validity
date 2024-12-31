@@ -29,6 +29,7 @@ class Usb():
             pass
 
     def open(self, vendor=0x138a, product=0x0097):
+        self.enable_trace()
         self.dev = ucore.find(idVendor=vendor, idProduct=product)
         self.dev.default_timeout = 15000
         self.thread = Thread(target=lambda: self.int_thread())
@@ -39,6 +40,7 @@ class Usb():
         return self.dev
 
     def send_init(self):
+        self.enable_trace()
         #self.dev.set_configuration()
 
         # TODO analyse responses, detect hardware type
