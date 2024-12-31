@@ -1,4 +1,3 @@
-
 import usb.core as ucore
 from binascii import *
 from .util import assert_status, unhex
@@ -15,6 +14,12 @@ class Usb():
         self.trace_enabled = False
         self.queue = Queue(maxsize=10)
         self.quit = None
+
+    def enable_trace(self):
+        self.trace_enabled = True
+
+    def disable_trace(self):
+        self.trace_enabled = False
 
     def purge_int_queue(self):
         try:
